@@ -1,0 +1,10 @@
+%h1 Post an item
+
+= error_messages_for :item
+
+= form_for(@item, :action => url(:items)) do
+  = hidden_field :user_id, :value => session.user.id
+  %p= text_field :title,  :label => "Title:" 
+  %p= text_field :url,  :label => "URL:"
+  %p
+    = submit "Create"

@@ -1,0 +1,143 @@
+@import reset
+@import colors
+@import measurements
+
+body
+  :text-align center
+  :background  black
+  :font-family 'Trebuchet MS',Arial,Verdana,sans-serif
+
+a
+  :color = !charcoal
+  :text-decoration none
+  
+  &:hover
+    :text-decoration underline
+    
+h1
+  :font-size 1.4em
+  :color = !dark_green
+  :font-weight bold
+  
+h2
+  :font-size 1.2em
+  :color = !dark_green
+  :font-weight bold
+
+#outer_container
+  :text-align center
+  :width 100%
+
+#container
+  :text-align center
+  :width = !page_width
+  :margin auto
+  
+#header
+  :width = !page_width
+  :text-align center
+  :background-color black
+  
+  #logo
+    :position absolute
+    :top 10
+    :left 10
+    
+  #navbar
+    :position absolute
+    :top 79px
+    :right 0px
+    :width 100%
+    :text-align center  
+    :padding 0px
+  
+    ul
+      :position absolute
+      :bottom 0
+      :right 0
+      :margin 0px
+      :padding 0px
+
+    li 
+      :float left
+      :list-style-type none
+      
+      &:last-child a
+        :border-right none
+    
+      a
+        :display block
+        :text-align left
+        :padding 4px 10px
+        :font-weight bold
+        :border-right 1px dotted
+        :border-right-color = !navbar_color
+        :color = !navbar_color
+      
+#main_content
+  :width = !page_width
+  :margin-top 79px
+  :text-align left
+  :float left
+  :background-color white
+
+  #main_content_inner
+    :margin 20px 15px 70px 15px
+    :float left
+    :background-color white
+
+    .rounded
+      :-moz-border-radius 8px
+      
+.item 
+  :font-size 0.8em
+  :margin-bottom 20px
+  :color = !very_dark_grey
+  
+  a
+    :color = !very_dark_grey  
+  
+  .title
+    :color #26722A
+    :font-size 1.8em
+    :line-height 1.4em
+    
+ul.items
+  .day
+    :margin 10px 0px 5px
+    
+#comments
+  :margin 25px 0px 5px
+  
+  li.comment
+    :list-style none 
+    :font-size 0.9em
+    :margin 10px 0px 5px
+    
+    .comment_header
+      :color = !very_dark_grey  
+      :font-size 0.9em
+      
+    .text
+      :margin 5px 0px 0px 5px
+
+.url_domain  
+  :color = !charcoal
+  
+#posts
+  :margin-top 15px
+  
+  table
+    :padding 3px
+    
+    td
+      :padding 3px
+
+#footer
+  :float left 
+  :margin-top 20px
+  :width = !page_width
+  :color white
+  :font-size 0.7em
+  :text-align center
+  :font-weight bold

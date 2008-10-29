@@ -1,0 +1,7 @@
+%tr
+  %td 
+    = link_to item.title, item.url, :class => 'title'
+  %td
+    = item.url
+  %td
+    = link_to 'edit', resource(item, :edit)

@@ -1,0 +1,12 @@
+%h1= @user.login
+
+#posts
+  %a{:name => 'posts'}
+  %h2 Recent Posts
+  %table
+    = partial :item, :with => @user.items
+
+#comments 
+  %a{:name => 'comments'}
+  %h2 Recent Comments
+  = partial :comment, :with => @user.comments

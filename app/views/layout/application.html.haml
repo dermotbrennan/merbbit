@@ -1,0 +1,30 @@
+!!!
+%head
+  %title Merbbit
+  %meta{:http_equiv=>"content-type", :content=>"text/html; charset=utf-8"}
+  = css_include_tag 'master.css'
+%body
+  #outer_container
+    #container
+      #header
+        #logo= link_to image_tag('logo.png'), '/'
+        
+        #navbar
+          %ul
+            %li= link_to 'home', '/'
+            %li
+              = logged_in_content do
+                = link_to 'post a new item', url(:new_item)  
+            %li#user_status
+              - if session.user
+                == #{link_to session.user.login, resource(session.user)}
+              - else
+                Login or Signup
+        
+      #main_content
+        #main_content_inner
+          = catch_content :for_layout
+        
+      #footer
+        &copy; Dermot Brennan 
+        = Date.today.year

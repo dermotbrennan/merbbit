@@ -1,0 +1,11 @@
+%ul.items
+  - previous_date = ''
+  - @items.each do |item|
+    - if previous_date != item.created_at.strftime('%B %d %Y')
+      - previous_date = item.created_at.strftime('%B %d %Y')
+      %p.day= item.created_at.strftime '%B %d %Y'
+    = partial :item, :item => item
+    
+#pagination
+  = link_to('newer', url(:controller => 'items', :action => 'index', :page => (@page - 1))) if @page > 1
+  = link_to 'older', url(:controller => 'items', :action => 'index', :page => (@page + 1))

@@ -1,0 +1,12 @@
+%h1== Edit "#{link_to @item.title, resource(@item)}"
+= error_messages_for :item
+
+= form_for(@item, :action => url(:item, @item)) do
+  %p= text_field :title,  :label => "Title:" 
+  %p= text_field :url,  :label => "URL:"
+  %p
+    = submit "Update"
+
+= link_to 'Show', url(:item, @item)
+|
+= link_to 'Back', url(:items)

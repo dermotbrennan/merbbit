@@ -1,0 +1,6 @@
+%li.comment 
+  = link_to comment.user.login, url(:user, comment.user), :class => 'comment_header'
+  %span.comment_header== - #{time_lost_in_words comment.created_at} ago
+  %br
+  .text= comment.text
+  
