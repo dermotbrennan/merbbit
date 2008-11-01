@@ -1,12 +1,12 @@
 %h1 Signup
 
-= error_messages_for :user
+= error_messages_for @user
 
 = form_for(@user, :action => url(:users) ) do
-  %p= text_field :login,  :label => "Login: " 
-  %p= text_field :email,  :label => "Email: " 
-  %p= password_field :password,  :label => "Password: "
-  %p= password_field :password_confirmation,  :label => "Confirm Password: "
-  %p= submit "Signup"
+  %p= text_field :login,  :label => "Choose a username " 
+  %p= text_field :email,  :label => "Email " 
+  %p= password_field :password,  :label => "Password "
+  %p= password_field :password_confirmation,  :label => "Confirm Password "
+  %p= submit "Signup", :class => 'submit'
 
 = link_to 'Back', url(:users)

@@ -3,10 +3,16 @@
 #posts
   %a{:name => 'posts'}
   %h2 Recent Posts
-  %table
-    = partial :item, :with => @user.items
+  - if !@user.items.empty?
+    %table
+      = partial :item, :with => @user.items
+  - else
+    %p None. 
 
 #comments 
   %a{:name => 'comments'}
   %h2 Recent Comments
-  = partial :comment, :with => @user.comments
+  - if !@user.comments.empty?
+    = partial :comment, :with => @user.comments
+  - else
+    %p None.

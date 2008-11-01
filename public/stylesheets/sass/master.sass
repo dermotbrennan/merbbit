@@ -5,7 +5,8 @@
 body
   :text-align center
   :background  black
-  :font-family 'Trebuchet MS',Arial,Verdana,sans-serif
+  :font-size 62.5%
+  :font-family Helvetica,Arial,Verdana,sans-serif
 
 a
   :color = !charcoal
@@ -15,12 +16,13 @@ a
     :text-decoration underline
     
 h1
-  :font-size 1.4em
+  :font-size 1.8em
+  :line-height 1.8em
   :color = !dark_green
   :font-weight bold
   
 h2
-  :font-size 1.2em
+  :font-size 1.6em
   :color = !dark_green
   :font-weight bold
 
@@ -79,18 +81,19 @@ h2
   :margin-top 79px
   :text-align left
   :float left
-  :background-color white
+  :background-color #efefef
 
   #main_content_inner
     :margin 20px 15px 70px 15px
     :float left
-    :background-color white
+    :width 80%
+    :background-color #efefef
 
     .rounded
       :-moz-border-radius 8px
       
 .item 
-  :font-size 0.8em
+  :font-size 1em
   :margin-bottom 20px
   :color = !very_dark_grey
   
@@ -111,18 +114,48 @@ ul.items
   
   li.comment
     :list-style none 
-    :font-size 0.9em
+    :font-size 1.1em
     :margin 10px 0px 5px
     
     .comment_header
       :color = !very_dark_grey  
-      :font-size 0.9em
+      :font-size 1.1em
       
     .text
       :margin 5px 0px 0px 5px
 
 .url_domain  
   :color = !charcoal
+
+form 
+  :width 460px
+  
+form label
+  :display inline-block
+  :font-size 1.4em
+  :width 150px
+
+form input
+  :font-size 1.4em
+  :width 280px
+  
+form input.submit
+  :display block
+  :margin 10px
+  :width auto
+
+form p
+  :margin 5px 0px
+  
+.error
+  :margin 15px
+  
+  h2
+    :color #f33
+  
+  li
+    :margin 5px
+    :font-size 1.2em
   
 #posts
   :margin-top 15px
@@ -138,6 +171,6 @@ ul.items
   :margin-top 20px
   :width = !page_width
   :color white
-  :font-size 0.7em
+  :font-size 1em
   :text-align center
   :font-weight bold

@@ -15,11 +15,16 @@
             %li
               = logged_in_content do
                 = link_to 'post a new item', url(:new_item)  
-            %li#user_status
-              - if session.user
-                == #{link_to session.user.login, resource(session.user)}
-              - else
-                Login or Signup
+            - if session.user
+              %li.user_status
+                = link_to session.user.login, resource(session.user)
+              %li.user_status
+                = link_to 'Logout', url(:logout)
+            - else
+              %li.user_status
+                = link_to 'Login', url(:login)
+              %li.user_status
+                = link_to 'Signup', url(:new_user)
         
       #main_content
         #main_content_inner
