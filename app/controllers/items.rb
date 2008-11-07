@@ -1,6 +1,6 @@
 class Items < Application
   # provides :xml, :yaml, :js
-  before :ensure_authenticated, :exclude => {:index, :show}
+  before :ensure_authenticated, :exclude => [:index, :show]
 
   def index
     per_page_limit = 30

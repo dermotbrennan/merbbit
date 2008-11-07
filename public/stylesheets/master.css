@@ -36,7 +36,7 @@ blockquote, q {
 
 body {
   text-align: center;
-  background: black;
+  background: #252525;
   font-size: 62.5%;
   font-family: Helvetica,Arial,Verdana,sans-serif; }
 
@@ -63,11 +63,13 @@ h2 {
 
 #container {
   text-align: center;
-  width: 100%;
-  margin: auto; }
+  width: 1200px;
+  margin: auto;
+  height: 100%;
+  position: relative; }
 
 #header {
-  width: 100%;
+  width: 1200px;
   text-align: center;
   background-color: black; }
   #header #logo {
@@ -102,10 +104,11 @@ h2 {
         color: #9ce39f; }
 
 #main_content {
-  width: 100%;
+  width: 1200px;
   margin-top: 79px;
   text-align: left;
   float: left;
+  min-height: 800px;
   background-color: #efefef; }
   #main_content #main_content_inner {
     margin: 20px 15px 70px 15px;
@@ -182,7 +185,7 @@ form p {
 #footer {
   float: left;
   margin-top: 20px;
-  width: 100%;
+  width: 1200px;
   color: white;
   font-size: 1em;
   text-align: center;
