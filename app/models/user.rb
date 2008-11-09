@@ -55,7 +55,7 @@ class User
   end
   
   def voted_for?(item)
-    return false unless item.class == Item
+    return false unless item.class.respond_to? :id
     !Vote.all(:conditions => {:item_id => item.id, :user_id => id}).empty?
   end
 end

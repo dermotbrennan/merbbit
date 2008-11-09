@@ -26,16 +26,14 @@ class Votes < Application
   end
 
   def create(vote)
-    puts vote.inspect
     @vote = Vote.new(vote)
     @vote.user = session.user
-    if vote[:value] == 'up'
-      @vote.value = 1
-    elsif vote[:value] == 'down'
-      @vote.value = -1
-    else
-      @vote.value = 0
-    end
+    @vote.value =
+      case vote[:value]
+      when 'up' then 1
+      when 'down' then -1
+      else 0
+      end
     if @vote.save
       redirect (request.referer || url(:items))
     else
