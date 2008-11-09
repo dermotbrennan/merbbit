@@ -27,6 +27,7 @@
 
 Merb.logger.info("Compiling routes...")
 Merb::Router.prepare do
+  resources :votes
   resources :comments 
   resources :items do |i|
     i.resources :comments

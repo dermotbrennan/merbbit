@@ -5,8 +5,8 @@ require 'merb-core'
 require 'merb-core/tasks/merb'
 
 GEM_NAME = "merb-auth-slice-password"
-AUTHOR = "Daniel Neighman"
-EMAIL = "has.sox@gmail.com"
+AUTHOR = ""
+EMAIL = ""
 HOMEPAGE = "http://merbivore.com/"
 SUMMARY = "Merb Slice that provides UI for password strategy of merb-auth."
 PKG_BUILD   = ENV['PKG_BUILD'] ? '.' + ENV['PKG_BUILD'] : ''

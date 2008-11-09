@@ -119,18 +119,52 @@ h2 {
       -moz-border-radius: 8px; }
 
 .item {
-  font-size: 1em;
+  font-size: 1.3em;
   margin-bottom: 20px;
   color: #888888; }
-  .item a {
-    color: #888888; }
-  .item .title {
-    color: #26722A;
-    font-size: 1.8em;
-    line-height: 1.4em; }
+  .item .votes {
+    float: left;
+    margin-right: 20px;
+    border: 2px solid #000;
+    background-color: #888888;
+    padding: 3px;
+    width: 100px; }
+    .item .votes .vote_count {
+      font-size: 3.0em;
+      margin: 14px 2px 8px 2px;
+      text-align: center;
+      color: #26722A; }
+      .item .votes .vote_count span {
+        font-size: 0.4em; }
+    .item .votes form {
+      position: relative;
+      display: inline;
+      bottom: 0; }
+      .item .votes form input {
+        float: left;
+        clear: left;
+        width: 100%;
+        font-size: 0.8em; }
+  .item .item_contents {
+    float: left; }
+    .item .item_contents a {
+      color: #888888; }
+    .item .item_contents .title {
+      color: #26722A;
+      font-size: 2.8em;
+      line-height: 1.1em; }
 
-ul.items .day {
-  margin: 10px 0px 5px; }
+ul.items {
+  float: left;
+  width: 100%; }
+  ul.items li {
+    float: left;
+    clear: left; }
+  ul.items .day {
+    margin: 10px 0px 5px; }
+
+#pagination {
+  float: left; }
 
 #comments {
   margin: 25px 0px 5px; }
@@ -156,8 +190,7 @@ form label {
   width: 150px; }
 
 form input {
-  font-size: 1.4em;
-  width: 280px; }
+  font-size: 1.4em; }
 
 form input.submit {
   display: block;

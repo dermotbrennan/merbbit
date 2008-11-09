@@ -5,6 +5,7 @@ class Item
   include DataMapper::Resource
   belongs_to :user
   has n, :comments
+  has n, :votes
   
   property :id, Serial
   property :title, String
@@ -14,6 +15,10 @@ class Item
   property :created_at, DateTime
   
   def url_domain
-    ::URI.parse(url).host
+    ::URI.parse(url).host || url
+  end
+  
+  def votes_count
+    votes.map {|v| v.value}.compact.inject(0) {|i,j| i+j}
   end
 end

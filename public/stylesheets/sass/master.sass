@@ -96,21 +96,62 @@ h2
       :-moz-border-radius 8px
       
 .item 
-  :font-size 1em
+  :font-size 1.3em
   :margin-bottom 20px
   :color = !very_dark_grey
   
-  a
-    :color = !very_dark_grey  
+  .votes
+    :float left
+    :margin-right 20px
+    :border 2px solid #000
+    :background-color = !very_dark_grey
+    :padding 3px
+    :width 100px
+    
+    .vote_count
+      :font-size 3.0em
+      :margin 14px 2px 8px 2px
+      :text-align center
+      :color #26722A
+      
+      span
+        :font-size 0.4em
+    
+    form
+      :position relative
+      :display inline
+      :bottom 0
+      
+      input
+        :float left
+        :clear left
+        :width 100%
+        :font-size 0.8em
+          
+  .item_contents
+    :float left
+    a
+      :color = !very_dark_grey  
+
+    .title
+      :color #26722A
+      :font-size 2.8em
+      :line-height 1.1em
   
-  .title
-    :color #26722A
-    :font-size 1.8em
-    :line-height 1.4em
     
 ul.items
+  :float left
+  :width 100%
+  
+  li
+    :float left
+    :clear left
+  
   .day
     :margin 10px 0px 5px
+    
+#pagination
+  :float left
     
 #comments
   :margin 25px 0px 5px
@@ -140,7 +181,6 @@ form label
 
 form input
   :font-size 1.4em
-  :width 280px
   
 form input.submit
   :display block

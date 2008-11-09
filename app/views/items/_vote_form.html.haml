@@ -1,0 +1,4 @@
+= form_for Vote.new, :action => url(:votes) do
+  = hidden_field :name => "vote[value]", :value => value
+  = hidden_field :name => "vote[item_id]", :value => item.id.to_s
+  = submit 'vote ' + value

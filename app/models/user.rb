@@ -15,6 +15,7 @@ class User
   
   has n, :items
   has n, :comments
+  has n, :votes
   
   property :id,     Serial
   property :login,  String
@@ -51,5 +52,10 @@ class User
   def encrypt_password
     self.salt ||= Digest::SHA1.hexdigest("--#{Time.now.to_s}--#{login}--")
     self.crypted_password ||= User.encrypt(salt, password)
+  end
+  
+  def voted_for?(item)
+    return false unless item.class == Item
+    !Vote.all(:conditions => {:item_id => item.id, :user_id => id}).empty?
   end
 end
