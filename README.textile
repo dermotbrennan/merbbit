@@ -1,0 +1,28 @@
+= Merbbit
+
+Merbbit is a merb-based web app for community-driven link submission. It is heavily "inspired" by RubyFlow, Digg, Reddit and other such sites.
+
+This software is NOT production ready. I started this just as a side-project to learn more about Merb.
+
+== Features:
+* Signup & login
+* Link submission
+* Link Voting
+* Comments
+
+== Planned Features:
+* Threaded comments
+* Comment voting
+* Spam protection
+* RSS feeds
+* Search
+* Specs
+* and much much more...
+
+== Installation
+
+Check config/dependencies.yml for gem dependencies
+Modify database.yml
+rake db:automigrate
+Deploy...
+
