@@ -176,7 +176,13 @@ ul.items {
       color: #888888;
       font-size: 1.1em; }
     #comments li.comment .text {
-      margin: 5px 0px 0px 5px; }
+      margin: 5px 0px 0px 5px;
+      font-size: 1.2em; }
+    #comments li.comment .comment_actions {
+      font-size: 0.9em; }
+    #comments li.comment ul.children {
+      margin-top: 20px;
+      margin-left: 30px; }
 
 .url_domain {
   color: #222222; }

@@ -12,11 +12,12 @@ class Comments < Application
     display @comment
   end
 
-  def new(item_id)
+  def new(item_id, parent_id = nil)
     only_provides :html
     @comment = Comment.new
     @comment.user = session.user
     @comment.item_id = item_id
+    @comment.parent_id = parent_id
     display @comment
   end
 
@@ -29,6 +30,7 @@ class Comments < Application
 
   def create(comment)
     @comment = Comment.new(comment)
+    @comment.user = session.user
     if @comment.save
       redirect url(:item, @comment.item), :message => {:notice => "Comment was successfully created"}
     else

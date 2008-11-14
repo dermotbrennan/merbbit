@@ -1,10 +1,14 @@
-%h1== Comment on "#{@comment.item.title}" 
+%h1
+  == Comment on "#{@comment.item.title}" 
+  - if @comment.parent_id
+    in reply to 
+    %blockquote== #{@comment.parent.formatted_text}
 
 = error_messages_for :comment
 
 = form_for(@comment, :action => url(:comments)) do
-  = hidden_field :user_id
   = hidden_field :item_id
+  = hidden_field :parent_id
   %p= text_area :text, :label => "Comment:" 
   %p
     = submit "Create"

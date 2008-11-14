@@ -13,4 +13,4 @@
   %a{:name => 'comments'}
   %h2 Comments
   = link_to 'Post a comment', resource(:comments, :new, :item_id => @item.id)
-  = partial :comment, :with => @item.comments
+  = partial :comment, :with => @item.root_comments

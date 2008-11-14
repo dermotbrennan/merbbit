@@ -2,5 +2,10 @@
   = link_to comment.user.login, url(:user, comment.user), :class => 'comment_header'
   %span.comment_header== - #{time_lost_in_words comment.created_at} ago
   %br
-  .text= comment.text
-  
+  .text= comment.formatted_text
+  %br 
+  .comment_actions
+    = link_to 'Reply', resource(:comments, :new, :item_id => @item.id, :parent_id => comment.id)
+
+  %ul.children
+    = partial :comment, :with => comment.children

@@ -21,4 +21,9 @@ class Item
   def votes_count
     votes.map {|v| v.value}.compact.inject(0) {|i,j| i+j}
   end
+  
+  def root_comments
+    @comments ||= comments
+    @comments.select {|comment| comment.parent_id.nil? }.sort_by {|comment_a| comment_a.created_at }
+  end
 end
