@@ -57,6 +57,9 @@ h2 {
   color: #084e0b;
   font-weight: bold; }
 
+.centered {
+  text-align: center; }
+
 #outer_container {
   text-align: center;
   width: 100%; }
@@ -82,7 +85,8 @@ h2 {
     right: 0px;
     width: 100%;
     text-align: center;
-    padding: 0px; }
+    padding: 0px;
+    font-size: 1.2em; }
     #header #navbar ul {
       position: absolute;
       bottom: 0;
@@ -111,73 +115,87 @@ h2 {
   min-height: 800px;
   background-color: #efefef; }
   #main_content #main_content_inner {
-    margin: 20px 15px 70px 15px;
+    margin: 20px 30px 70px 15px;
     float: left;
-    width: 80%;
+    width: 95%;
     background-color: #efefef; }
     #main_content #main_content_inner .rounded {
       -moz-border-radius: 8px; }
 
-.item {
+div.item {
   font-size: 1.3em;
   margin-bottom: 20px;
   color: #888888; }
-  .item .votes {
+  div.item .votes {
     float: left;
     margin-right: 20px;
     border: 2px solid #000;
     background-color: #888888;
     padding: 3px;
-    width: 100px; }
-    .item .votes .vote_count {
+    width: 100px;
+    text-align: center; }
+    div.item .votes .vote_count {
       font-size: 3.0em;
       margin: 14px 2px 8px 2px;
       text-align: center;
       color: #26722A; }
-      .item .votes .vote_count span {
+      div.item .votes .vote_count span {
         font-size: 0.4em; }
-    .item .votes form {
+    div.item .votes form {
       position: relative;
       display: inline;
       bottom: 0; }
-      .item .votes form input {
+      div.item .votes form input {
         float: left;
         clear: left;
         width: 100%;
         font-size: 0.8em; }
-  .item .item_contents {
+  div.item .item_contents {
     float: left; }
-    .item .item_contents a {
+    div.item .item_contents a {
       color: #888888; }
-    .item .item_contents .title {
+    div.item .item_contents .title {
       color: #26722A;
       font-size: 2.8em;
       line-height: 1.1em; }
 
 ul.items {
-  float: left;
-  width: 100%; }
+  float: left; }
   ul.items li {
     float: left;
     clear: left; }
   ul.items .day {
+    float: left;
+    clear: left;
     margin: 10px 0px 5px; }
 
 #pagination {
-  float: left; }
+  float: left;
+  width: 100%; }
+  #pagination div {
+    float: left;
+    width: 33%;
+    height: 20px; }
+  #pagination #items_size {
+    text-align: center; }
+  #pagination #older {
+    text-align: right; }
 
 #comments {
-  margin: 25px 0px 5px; }
+  margin: 25px 0px 5px;
+  float: left;
+  clear: left; }
   #comments li.comment {
     list-style: none;
-    font-size: 1.1em;
+    font-size: 1em;
     margin: 10px 0px 5px; }
     #comments li.comment .comment_header {
       color: #888888;
       font-size: 1.1em; }
     #comments li.comment .text {
       margin: 5px 0px 0px 5px;
-      font-size: 1.2em; }
+      font-size: 1.2em;
+      color: #222222; }
     #comments li.comment .comment_actions {
       font-size: 0.9em; }
     #comments li.comment ul.children {

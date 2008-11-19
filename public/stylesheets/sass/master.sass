@@ -26,6 +26,9 @@ h2
   :color = !dark_green
   :font-weight bold
 
+.centered
+  :text-align center
+
 #outer_container
   :text-align center
   :width 100%
@@ -54,6 +57,7 @@ h2
     :width 100%
     :text-align center  
     :padding 0px
+    :font-size 1.2em
   
     ul
       :position absolute
@@ -87,15 +91,15 @@ h2
   :background-color #efefef
 
   #main_content_inner
-    :margin 20px 15px 70px 15px
+    :margin 20px 30px 70px 15px
     :float left
-    :width 80%
+    :width 95%
     :background-color #efefef
 
     .rounded
       :-moz-border-radius 8px
       
-.item 
+div.item 
   :font-size 1.3em
   :margin-bottom 20px
   :color = !very_dark_grey
@@ -107,6 +111,7 @@ h2
     :background-color = !very_dark_grey
     :padding 3px
     :width 100px
+    :text-align center
     
     .vote_count
       :font-size 3.0em
@@ -141,24 +146,39 @@ h2
     
 ul.items
   :float left
-  :width 100%
   
   li
     :float left
     :clear left
   
   .day
+    :float left
+    :clear left
     :margin 10px 0px 5px
     
 #pagination
   :float left
+  :width 100%
+  
+  div 
+    :float left
+    :width 33%
+    :height 20px
+    
+  #items_size
+    :text-align center
+    
+  #older
+    :text-align right
     
 #comments
   :margin 25px 0px 5px
+  :float left
+  :clear left
   
   li.comment
     :list-style none 
-    :font-size 1.1em
+    :font-size 1em
     :margin 10px 0px 5px
     
     .comment_header
@@ -168,6 +188,7 @@ ul.items
     .text
       :margin 5px 0px 0px 5px
       :font-size 1.2em
+      :color = !charcoal
       
     .comment_actions
       :font-size 0.9em

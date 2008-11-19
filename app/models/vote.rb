@@ -16,7 +16,8 @@ class Vote
   
   private
   def check_hasnt_already_voted
-    !self.user.voted_for? self.item
+    !self.user.nil? &&
+      !self.user.voted_for?(self.item)
   end
 
 end

@@ -3,10 +3,12 @@ class Items < Application
   before :ensure_authenticated, :exclude => [:index, :show]
 
   def index
-    per_page_limit = 30
+    @per_page_limit = 30
     @page = (params[:page] || 1).to_i
-    item_offset = (@page-1)*per_page_limit 
-    @items = Item.all(:order => [:created_at.desc], :limit => per_page_limit, :offset => item_offset)
+    @item_offset = (@page-1)*@per_page_limit 
+    @num_all_items = Item.count
+    @num_pages = (@num_all_items.to_f/@per_page_limit.to_f).ceil
+    @items = Item.all(:order => [:created_at.desc], :limit => @per_page_limit, :offset => @item_offset)
     display @items
   end
 

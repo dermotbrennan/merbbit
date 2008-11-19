@@ -1,19 +1,32 @@
-%li.item
+- comments_full ||= false
+.item
   .votes
     .vote_count
       = item.votes_count
       %br/
       %span votes
-    - unless session.user.voted_for? item
-      = partial 'vote_form', :item => item, :value => 'up'
-      = partial 'vote_form', :item => item, :value => 'down'
+    - if session.user
+      - unless session.user.voted_for?(item)
+        = partial 'vote_form', :item => item, :value => 'up'
+        = partial 'vote_form', :item => item, :value => 'down'
+    - else
+      %p
+        = link_to 'Login to vote', url(:login)
   .item_contents
     = link_to item.title, item.url, :class => 'title'
     %span.url_domain== (#{item.url_domain})
-  
+
     %br
     == Posted #{time_lost_in_words item.created_at} ago by #{link_to item.user.login} 
     %br
     = link_to 'Edit', resource(item, :edit) if session.user == item.user
-    = link_to item.comments.size.to_s + ' comments', resource(item)
-    = link_to 'Post a comment', resource(:comments, :new, :item_id => item.id)
+    - if !comments_full
+      = link_to item.comments.size.to_s + ' comments', resource(item)
+      = link_to 'Post a comment', resource(:comments, :new, :item_id => item.id)
+    
+  - if comments_full
+    #comments 
+      %a{:name => 'comments'}
+      %h2 Comments
+      = link_to 'Post a comment', resource(:comments, :new, :item_id => @item.id)
+      = partial :comment, :with => @item.root_comments

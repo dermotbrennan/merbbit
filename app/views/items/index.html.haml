@@ -5,10 +5,17 @@
       - if previous_date != item.created_at.strftime('%B %d %Y')
         - previous_date = item.created_at.strftime('%B %d %Y')
         %p.day= item.created_at.strftime '%B %d %Y'
-      = partial :item, :item => item
+      %li
+        = partial :item, :item => item
   - else
     %p Nothing found.
     
 #pagination
-  = link_to('newer', url(:controller => 'items', :action => 'index', :page => (@page - 1))) if @page > 1
-  = link_to 'older', url(:controller => 'items', :action => 'index', :page => (@page + 1))
+  #newer
+    = link_to('newer', url(:controller => 'items', :action => 'index', :page => (@page - 1))) if @page > 1
+  
+  #items_size
+    == #{@item_offset + 1} - #{@item_offset + @items.size} of #{@num_all_items}
+  
+  #older
+    = link_to 'older', url(:controller => 'items', :action => 'index', :page => (@page + 1)) if @page < @num_pages

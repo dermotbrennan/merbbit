@@ -1,16 +1,1 @@
-%h1.item
-  = link_to @item.title, @item.url, :class => 'title'
-  %span.url_domain== (#{@item.url_domain})
-  
-%p.item_info
-  %span.url= @item.url
-  %br
-  == Posted #{time_lost_in_words @item.created_at} ago by #{link_to @item.user.login}
-  %br
-  = link_to 'Edit', resource(@item, :edit) if @item.user == session.user
-
-#comments 
-  %a{:name => 'comments'}
-  %h2 Comments
-  = link_to 'Post a comment', resource(:comments, :new, :item_id => @item.id)
-  = partial :comment, :with => @item.root_comments
+= partial :item, :item => @item, :comments_full => true

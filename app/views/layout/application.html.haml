@@ -19,12 +19,12 @@
               %li.user_status
                 = link_to session.user.login, resource(session.user)
               %li.user_status
-                = link_to 'Logout', url(:logout)
+                = link_to 'logout', url(:logout)
             - else
               %li.user_status
-                = link_to 'Login', url(:login)
+                = link_to 'login', url(:login)
               %li.user_status
-                = link_to 'Signup', url(:new_user)
+                = link_to 'signup', url(:new_user)
         
       #main_content
         #main_content_inner
