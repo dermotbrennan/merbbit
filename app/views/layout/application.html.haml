@@ -17,7 +17,7 @@
                 = link_to 'post a new item', url(:new_item)  
             - if session.user
               %li.user_status
-                = link_to session.user.login, resource(session.user)
+                = link_to session.user.login, resource(session.user), :id => 'user_login'
               %li.user_status
                 = link_to 'logout', url(:logout)
             - else

@@ -23,7 +23,10 @@ h2. Planned Features:
 h2. Installation
 
 Check config/dependencies.yml for gem dependencies
+
 Modify database.yml
+
 rake db:automigrate
+
 Deploy...
 

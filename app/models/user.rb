@@ -43,8 +43,8 @@ class User
     Digest::SHA1.hexdigest("--#{salt}--#{password}--")
   end
 
-  def self.authenticate(login, password)
-    u = self.first(:login => login)
+  def self.authenticate(email, password)
+    u = self.first(:email => email)
     return nil unless u
     u.crypted_password == encrypt(u.salt, password) ? u : nil
   end
