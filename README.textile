@@ -2,7 +2,7 @@ h1. Merbbit
 
 Merbbit is a merb-based web app for community-driven link submission. It is heavily "inspired" by RubyFlow, Digg, Reddit and other such sites.
 
-Merbbit is NOT production ready. I started this as a side-project to learn more about Merb.
+Merbbit is not production ready and should just be used as sample merb code.
 
 h2. Features:
 
@@ -23,6 +23,11 @@ h2. Planned Features:
 h2. Installation
 
 Check config/dependencies.yml for gem dependencies
+
+For testing
+* cucumber, merb_cucumber
+* webrat
+* factory_girl
 
 Modify database.yml
 
